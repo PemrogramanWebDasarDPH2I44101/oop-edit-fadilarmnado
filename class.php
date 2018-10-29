@@ -4,9 +4,9 @@ class Kalkulator{
 
     public function Kalkulator(){
         $servername = "localhost";
-        $username   = "admin";
-        $password   = "1234";
-        $db         = "WebDasar";       
+        $username   = "root";
+        $password   = "";
+        $db         = "mahasiswa";       
         $this->conn = mysqli_connect($servername, $username, 
                            $password, $db);                        
     }    
@@ -34,8 +34,10 @@ $operasi = $_POST["operasi"];
 $kalkulator = new Kalkulator();
 if($operasi == "+")
     $kalkulator->tambah();
+require_once("data.php");
 if($operasi == "-")
     $kalkulator->kurang();
+require_once("data.php");
 if($operasi == "/"){
     $result = $kalkulator->bagi();
     require_once("data.php");
